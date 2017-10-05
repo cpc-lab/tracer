@@ -1,29 +1,20 @@
-TraceR v2
-===========
+# TraceRP v1.0
 
-TraceR is a trace replay tool built upon the ROSS-based CODES simulation
-framework. TraceR can be used for predicting network performance and
-understanding network behavior by simulating messaging in High Performance
-Computing applications on interconnection networks.
+TraceRP is developed based on TraceR, it can be used for predicting network performance and power consumption.
+TraceRP supports a power reduction technique which transitioning to the low power mode during the period when the packet is not processed.
 
-### Build
 
-* Download and install ROSS:
+## Build
+
+### Download and install ROSS:
+
 ```
 git clone https://github.com/carothersc/ROSS
 ```
 Latest verified commit: 53b7fcabcb9b8c015b1f17e3ce1a94298b06920d
 
-* Download and install CODES:
-```
-Website: https://xgitlab.cels.anl.gov/codes/codes
-git clone https://xgitlab.cels.anl.gov/codes/codes.git
-```
-Latest verfied commit (from master): 8f56c9608eb07922971242d76bae88ad0c7aa789
+### Download and install CODES:
 
-Pending pull request (with new features): https://xgitlab.cels.anl.gov/codes/codes/merge_requests/21
-
-* Download and install CODES (enable power estimation):
 ```
 git clone https://xgitlab.cels.anl.gov/yuta.kakibuka/codes/
 ```
@@ -31,14 +22,14 @@ Use "power-estimation" branch.
 
 Latest verified commit (from "power-estimation" branch): 16e110585850d0752f4654631d8595d5462aa1f1
 
-
-
-* Trace format choice (pick one of the following): 
+### Trace format choice (pick one of the following): 
 
 1) AMPI-based BigSim format: download and build Charm++.
+
 ```
 git clone http://charm.cs.uiuc.edu/gerrit/charm
 ```
+
 Follow instructions in the [Charm++ manual](http://charm.cs.illinois.edu/manuals/html/charm++/A.html). 
 
 Use "charm++" as target for compiling TraceR.
@@ -64,7 +55,7 @@ cd tracer
 make
 ```
 
-### Run
+## Run
 
 ### Parameter setting for power estimation function
 
@@ -135,31 +126,3 @@ LINKFILE: It is created as traceRP-link on the output directory
 EXECTIME: It is execution time which is reported by TraceR  
 ACTPWR: The power consumption of Active mode  
 LPIPWR: The power consumption of Low-power mode  
-
-### Reference
-
-Any published work that utilizes this software should include the following
-reference:
-
-```
-Nikhil Jain, Abhinav Bhatele, Sam White, Todd Gamblin, and Laxmikant Kale.
-Evaluating HPC Networks via Simulation of Parallel Workloads. SC 2016.
-
-```
-
-### Release
-
-Copyright (c) 2015, Lawrence Livermore National Security, LLC.
-Produced at the Lawrence Livermore National Laboratory.
-
-Written by:
-```
-    Nikhil Jain <nikhil.jain@acm.org>
-    Bilge Acun <acun2@illinois.edu>
-    Abhinav Bhatele <bhatele@llnl.gov>
-```
-LLNL-CODE-681378. All rights reserved.
-
-This file is part of TraceR. For details, see:
-https://github.com/LLNL/tracer.
-Please also read the LICENSE file for our notice and the LGPL.
