@@ -116,8 +116,8 @@ http://charm.cs.illinois.edu/manuals/html/bigsim/manual-1p.html.
 ### Estimate the power consumption
 
 ```
-alias rp=calcpower.py
-rp --log LOGFILE --link LINKFILE --ttime EXECTIME --actpwr ACTPWR --lpipwr LPIPWR
+cd power-estimator/
+python3 ./calcpower.py --log LOGFILE --link LINKFILE --ttime EXECTIME --actpwr ACTPWR --lpipwr LPIPWR
 ```
 
 Parameters:   
