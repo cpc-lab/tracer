@@ -23,6 +23,16 @@ Latest verfied commit (from master): 8f56c9608eb07922971242d76bae88ad0c7aa789
 
 Pending pull request (with new features): https://xgitlab.cels.anl.gov/codes/codes/merge_requests/21
 
+* Download and install CODES (enable power estimation):
+```
+git clone https://xgitlab.cels.anl.gov/yuta.kakibuka/codes/
+```
+Use "power-estimation" branch.
+
+Latest verified commit (from "power-estimation" branch): 16e110585850d0752f4654631d8595d5462aa1f1
+
+
+
 * Trace format choice (pick one of the following): 
 
 1) AMPI-based BigSim format: download and build Charm++.
@@ -55,6 +65,26 @@ make
 ```
 
 ### Run
+
+### Parameter setting for power estimation function
+
+To estimate the power consumption and performance overhead, please set On/Off link parameters.
+
+Modify following files:
+
+- /tracer/tracer/conf/tracer-fattree.conf
+- /tracer/tracer/conf/tracer-torus.conf
+- /tracer/tracer/conf/tracer-dragonfly.conf
+
+Waiting time for sleep
+
+- Modify the value of traceRP_sleep_time of the files
+
+Wakeup time
+
+- Modify the value of traceRP_wakeup_time of the files
+
+### Execute TraceR
 
 ```
 mpirun -np <p> ../traceR --sync=3  -- ../conf/<choose here> <tracer_config>
@@ -90,6 +120,21 @@ Parameters:
 Please refer to README.OTF for instructions on generating OTF2-MPI trace files.
 BigSim-AMPI trace file generation instructions are available at
 http://charm.cs.illinois.edu/manuals/html/bigsim/manual-1p.html.
+
+
+### Estimate the power consumption
+
+```
+alias rp=calcpower.py
+rp --log LOGFILE --link LINKFILE --ttime EXECTIME --actpwr ACTPWR --lpipwr LPIPWR
+```
+
+Parameters:   
+LOGFILE: It is created as traceRP-power-consumption on the output directory of TraceR  
+LINKFILE: It is created as traceRP-link on the output directory  
+EXECTIME: It is execution time which is reported by TraceR  
+ACTPWR: The power consumption of Active mode  
+LPIPWR: The power consumption of Low-power mode  
 
 ### Reference
 
