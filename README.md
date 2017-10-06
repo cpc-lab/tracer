@@ -126,3 +126,8 @@ LINKFILE: It is created as traceRP-link on the output directory
 EXECTIME: It is execution time which is reported by TraceR  
 ACTPWR: The power consumption of Active mode  
 LPIPWR: The power consumption of Low-power mode  
+
+## Constact
+
+Takatsugu Ono (takatsugu.ono@cpc.ait.kyushu-u.ac.jp   
+Yuta Kakibuka (yuta.kakibuka@cpc.ait.kyushu-u.ac.jp
